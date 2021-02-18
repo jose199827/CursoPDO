@@ -1,5 +1,5 @@
 <?php
-abstract class Persona
+class Persona
 {
   public $intDpi;
   public $strNombre;
@@ -11,7 +11,14 @@ abstract class Persona
     $this->intEdad = $edad;
   }
   //Metodos
-  abstract public function getDatosPersonale();
-  abstract public function setMensaje(string $mensaje);
-  abstract public function getMensaje(): string;
+  public function getDatosPersonale()
+  {
+    $datos = "
+    <h2>DATOS PERSONALES</h2>
+    DPI: {$this->intDpi}<br>
+    Nombre: {$this->strNombre}<br>
+    Edad: {$this->intEdad}<br>
+    ";
+    return $datos;
+  }
 }
