@@ -17,4 +17,23 @@ class Cliente extends Persona
   {
     return $this->fltcredito;
   }
+
+  public function getDatosPersonale()
+  {
+    $datos = "
+    <h2>DATOS PERSONALES</h2>
+    DPI: {$this->intDpi}<br>
+    Nombre: {$this->strNombre}<br>
+    Edad: {$this->intEdad}<br>
+    ";
+    return $datos;
+  }
+  public function setMensaje(string $mensaje)
+  {
+    $this->strMensaje = $mensaje;
+  }
+  public function getMensaje(): string
+  {
+    return $this->strMensaje . " " . $this->strNombre;
+  }
 }
