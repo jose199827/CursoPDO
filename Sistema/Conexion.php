@@ -13,11 +13,13 @@ class Conexion
     try {
       $this->conect = new PDO($connectionString, $this->user, $this->password);
       $this->conect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      /*  echo "Conexion exitosa."; */
     } catch (Exception $e) {
       $this->conect = "Error de Conexión.";
       echo "ERROR:" . $e->getMessage();
     }
   }
+  public function connect()
+  {
+    return $this->conect;
+  }
 }
-$conect = new Conexion();
